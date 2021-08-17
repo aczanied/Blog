@@ -5,23 +5,26 @@
 </div> -->
 <div class="container">
   <div class="blog margin_top_40">
-    <button class="btn_blog" (click)="loadBlogs(0)"> Local </button>
-    <button class="btn_blog" (click)="loadBlogs(1)"> Remote </button>
-    <button class="btn_blog" (click)="loadBlogs(2)"> Remote Plus </button>
+    <button class="btn_blog" [ngClass]="{active: selectedOption === 0} " (click)="loadBlogs(0)"> Local </button>
+    <button class="btn_blog" [ngClass]="{active: selectedOption === 1} "(click)="loadBlogs(1)"> Remote </button>
+    <button class="btn_blog" [ngClass]="{active: selectedOption === 2} " (click)="loadBlogs(2)"> Remote Plus </button>
   </div>
 </div>
 
 <div *ngFor="let article of blog.articles; let idx = index;" >
   <!-- <app-blog-item></app-blog-item> -->
   <div class="container">
-    <div class="row" (click)="goDetail(idx)">
+    <div class="row">
         <div class="col-md-5 seccion_perfil margin_top_20">
             <h1 class="f_w_500 playfair_display"> <a class="playfair_display" href="{{ article.url }}" target="_blank">{{ article.title }}  </a> </h1>
             <p class="post justify">
               {{ article.description }}
             </p>
             <p class="published playfair_display"> By {{ article.source.name }} | <span class="playfair_display">{{ article.publishedAt }} </span></p>
-        </div>
+            <button  (click)="goDetail(idx)">
+              See More
+            </button>
+          </div>
         <div class="col-md-7 margin_top_20">
             <img [src]="article.image" class="image" alt="...">
         </div>

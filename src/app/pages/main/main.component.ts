@@ -11,12 +11,13 @@ import { MainService } from './main.service';
 export class MainComponent implements OnInit {
 
   public blog: Blog = new Blog();
+  public selectedOption: number = 0;
 
   constructor(private mainSV: MainService,
                private router: Router) { }
 
   ngOnInit(): void {
-    this.loadBlogs(Status.Remote);
+    this.loadBlogs(Status.Local);
   }
 
   public loadBlogs(option: number) {
@@ -26,20 +27,20 @@ export class MainComponent implements OnInit {
     switch (option) {
       case Status.Local:
         this.mainSV.getLocalBlogs().then((data: Blog) => {
-
+          this.selectedOption = Status.Local;
           this.blog = data;
-          console.log('sdsd', this.blog);
         });
         break;
         case Status.Remote:
 
           this.mainSV.getRemoteBlogs().subscribe((data: Blog) => {
+            this.selectedOption = Status.Remote;
           this.blog = data;
           });
           break;
           case Status.RemotePlus:
-
             this.mainSV.getRemotePlusBlogs().subscribe((data: Blog) => {
+              this.selectedOption = Status.RemotePlus;
             this.blog = data;
             });
             break;
@@ -50,8 +51,14 @@ export class MainComponent implements OnInit {
   }
 
   public goDetail(idx: number) {
-    this.router.navigate(['/post/' + idx]);
 
+    if (this.selectedOption === Status.Local) {
+      this.router.navigate(['/post/' + idx]);
+      return;
+    }
+
+    window.open(this.blog.articles[idx].url , "_blank");
   }
+
 
 }

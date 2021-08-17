@@ -24,7 +24,9 @@ export class AdminListComponent implements OnInit {
      this.blog = data;
    });
   }
-
+  seeItem(idx: number) {
+    this.router.navigate(['/post/' + idx]);
+  }
   editItem(idx: number) {
     this.router.navigate(['/admin/post/edit/' + idx]);
   }
