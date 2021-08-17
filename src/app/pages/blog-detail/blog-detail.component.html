@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row margin_top_20">
+      <img [src]="article.image" class="card-img-top" alt="...">
+      <div class="col-md-8">
+          <h1 class="playfair_display margin_top_40 "> {{ article.title }} </h1>
+          <p class="playfair_display"> {{ article.source.name }} | {{ article.publishedAt | date: 'medium' }}  </p>
+          <p class="post justify">  {{ article.content }} </p>
+      </div>
+
+      <div class="col-md-4">
+          <h3 class="recent_posts margin_top_20">Related Posts</h3>
+          <div class="row margin_top_20" *ngFor="let article of recentArticles">
+              <div class="col-md-6 margin_top_20">
+                  <img [src]="article.image" class="card-img-top" alt="...">
+              </div>
+              <div class="col-md-6 margin_top_20">
+                  <h4 class="playfair_display f_w_500 recent_post_title justify">
+                    {{ article.title }}
+                   </h4>
+                  <p class="playfair_display recent_published"> {{ article.source.name }} | {{ article.publishedAt | date: 'medium' }}  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

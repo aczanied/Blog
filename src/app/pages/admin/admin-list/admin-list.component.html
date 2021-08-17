@@ -1,70 +1,52 @@
+<div class="container-fluid">
+  <div class="row margin_top_20">
 
-
-<div class="container">
-  <div class="row">
-      <div class="col-md-3">
-          <h2 class="font-weight-light"> Eduardo Acosta </h2>
-          <p>
-             Admin
+      <div class="col-md-4 profile-section" >
+          <img src="https://image.flaticon.com/icons/png/512/64/64572.png" class="profile-pic" alt="">
+          <h2 class="font-weight-light playfair_display">aczanied</h2>
+          <p class=" f_w_300">
+              Joined August 2021
           </p>
       </div>
-       <div class="col-md-9">
-         <div class="row">
-          <div class="col-md-12">
+      <div class="col-md-8 margin_top_20">
+          <div class="col-md-12 ">
+            <h3 class="f_w_500 playfair_display"> Collections </h3>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12 form-inline ">
+              <div class="float-right">
+                <button class="btn btn-primary"
+                        (click)="addPost()"> ADD POST </button>
+              </div>
+            </div>
 
-            <h1>
-              Collection
-            </h1>
+              <div class="col-md-4 margin_top_20"  *ngFor="let article of blog.articles; let idx = index;"  >
+                  <div class="card" style="width: 18rem;">
+                      <img [src]="article.image" class="card-img-top" alt="...">
+                      <div class="card-body">
+                          <h5 class="card-title playfair_display"> {{ article.title }}</h5>
+                          <p class="card-text">
+                            {{ article.description }}
+                          </p>
+                          <div class="btn  btn-block col-md-12">
+                            <button  class="btn btn-success margin_right_btn ">See  </button>
+                            <button  class="btn btn-warning margin_right_btn" (click)="editItem(idx)"> Edit </button>
+                            <button  class="btn btn-danger  margin_right_btn" (click)="deleteItem(idx)"> Delete </button>
+                          </div>
+
+
+                      </div>
+                  </div>
+              </div>
+
+
+
+
+
 
           </div>
-          <h1>
-            Collection
-          </h1>
-          <hr>
-         </div>
-
-
-             <div class="row">
-              <div class="col-md-4" >
-                <div class="card" style="width: 18rem;">
-                  <img src="https://www.thesun.ie/wp-content/uploads/sites/3/2021/08/Pogba-Varane.jpg?strip=all&quality=100&w=1200&h=800&crop=1" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4" >
-                <div class="card" style="width: 18rem;">
-                  <img src="https://www.thesun.ie/wp-content/uploads/sites/3/2021/08/Pogba-Varane.jpg?strip=all&quality=100&w=1200&h=800&crop=1" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4" >
-                <div class="card" style="width: 18rem;">
-                  <img src="https://www.thesun.ie/wp-content/uploads/sites/3/2021/08/Pogba-Varane.jpg?strip=all&quality=100&w=1200&h=800&crop=1" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-              </div>
-
 
       </div>
   </div>
 </div>
-
-
-

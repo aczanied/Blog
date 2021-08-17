@@ -3,7 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  remoteApi: 'https://gnews.io/api/v4/',
+  token: '61daaca78c8eb9fd12c1a9b2065dff89',
+  keyword: 'watches',
+  remoteApiPlus: 'https://aczaniedblog.azurewebsites.net/api/',
 };
 
 /*

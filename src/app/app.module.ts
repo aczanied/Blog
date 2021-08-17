@@ -7,6 +7,12 @@ import { HeaderComponent } from './components/header/header.component';
 import { MainComponent } from './pages/main/main.component';
 import { ListComponent } from './pages/admin/list/list.component';
 import { AdminListComponent } from './pages/admin/admin-list/admin-list.component';
+import { BlogItemComponent } from './components/blog-item/blog-item.component';
+
+import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { BlogDetailComponent } from './pages/blog-detail/blog-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -14,11 +20,15 @@ import { AdminListComponent } from './pages/admin/admin-list/admin-list.componen
     HeaderComponent,
     MainComponent,
     ListComponent,
-    AdminListComponent
+    AdminListComponent,
+    BlogItemComponent,
+    FooterComponent,
+    BlogDetailComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

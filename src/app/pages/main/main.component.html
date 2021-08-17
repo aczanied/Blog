@@ -1,1 +1,43 @@
+<!-- <div class="btn btn-group">
+  <button class="btn btm-default" (click)="loadBlogs(0)"> Local </button>
+  <button class="btn btm-default" (click)="loadBlogs(1)"> Remote </button>
+  <button class="btn btm-default" (click)="loadBlogs(2)"> Remote Plus </button>
+</div> -->
+<div class="container">
+  <div class="blog margin_top_40">
+    <button class="btn_blog" (click)="loadBlogs(0)"> Local </button>
+    <button class="btn_blog" (click)="loadBlogs(1)"> Remote </button>
+    <button class="btn_blog" (click)="loadBlogs(2)"> Remote Plus </button>
+  </div>
+</div>
+
+<div *ngFor="let article of blog.articles; let idx = index;" >
+  <!-- <app-blog-item></app-blog-item> -->
+  <div class="container">
+    <div class="row" (click)="goDetail(idx)">
+        <div class="col-md-5 seccion_perfil margin_top_20">
+            <h1 class="f_w_500 playfair_display"> <a class="playfair_display" href="{{ article.url }}" target="_blank">{{ article.title }}  </a> </h1>
+            <p class="post justify">
+              {{ article.description }}
+            </p>
+            <p class="published playfair_display"> By {{ article.source.name }} | <span class="playfair_display">{{ article.publishedAt }} </span></p>
+        </div>
+        <div class="col-md-7 margin_top_20">
+            <img [src]="article.image" class="image" alt="...">
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="container-fluid">
+      <div class="row top-margined">
+          <div class="col-md-5 profile-section">
+            <h2> {{ article.title }} </h2>
+            <h5> {{ article.description }}</h5>
+          </div>
+          <div class="col-md-7 top-margined">
+            <img  class="image" [src]="article.image" alt="">
+          </div>
+      </div>
+    </div> -->
+</div>
 

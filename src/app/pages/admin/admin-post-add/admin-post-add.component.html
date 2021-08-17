@@ -1,0 +1,35 @@
+<div class="container-xxl">
+  <div class="row margin_top_20">
+
+<form (ngSubmit)="onSubmit()"[formGroup]="articleForm" class="form form-group" >
+
+  <label class="margin_top_20" for="title">Title: </label>
+  <input class="form-control"
+          [class.is-invalid]="validForm('title')"
+          id="title"
+          type="text"
+          formControlName="title">
+
+  <label class="margin_top_20"  for="description">Description: </label>
+  <input  class="form-control"  [class.is-invalid]="validForm('description')"   id="description" type="text" formControlName="description">
+
+  <label class="margin_top_20"  for="content">Content: </label>
+  <textarea class="form-control"  [class.is-invalid]="validForm('content')"   formControlName="content"  id="" cols="30" rows="10"></textarea>
+
+  <label class="margin_top_20" for="url">Url: </label>
+  <input  class="form-control"  [class.is-invalid]="validForm('url')"  id="url" type="url" formControlName="url">
+
+  <label class="margin_top_20" for="image">Picture Url: </label>
+  <input  class="form-control"  [class.is-invalid]="validForm('image')"  id="image" type="url" formControlName="image">
+
+  <br>
+  <div class="col-md-12 ">
+    <button type="submit" class="btn btn-success">
+      Save
+    </button>
+  </div>
+
+
+</form>
+  </div>
+</div>
