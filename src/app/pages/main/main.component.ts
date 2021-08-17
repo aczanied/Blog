@@ -21,26 +21,23 @@ export class MainComponent implements OnInit {
   }
 
   public loadBlogs(option: number) {
-
+    this.selectedOption = option;
     this.blog = new Blog();
 
     switch (option) {
       case Status.Local:
         this.mainSV.getLocalBlogs().then((data: Blog) => {
-          this.selectedOption = Status.Local;
           this.blog = data;
         });
         break;
         case Status.Remote:
 
           this.mainSV.getRemoteBlogs().subscribe((data: Blog) => {
-            this.selectedOption = Status.Remote;
           this.blog = data;
           });
           break;
           case Status.RemotePlus:
             this.mainSV.getRemotePlusBlogs().subscribe((data: Blog) => {
-              this.selectedOption = Status.RemotePlus;
             this.blog = data;
             });
             break;

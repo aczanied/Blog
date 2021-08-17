@@ -6,7 +6,7 @@ import { MainComponent } from './pages/main/main.component';
 
 
 const routes: Routes = [
-  { path: '**', component: MainComponent },
+
   // Routes of Template
   {
     path: '',
@@ -20,7 +20,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
   },
-
+  { path: '**', component: MainComponent },
 ];
 
 @NgModule({

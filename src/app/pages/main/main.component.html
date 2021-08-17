@@ -11,6 +11,11 @@
   </div>
 </div>
 
+<div class="col-md-12 margin_top_20" *ngIf="selectedOption === 0 && blog.articles.length === 0  ">
+  <img src="../../../assets/img/img1.svg" class="image" alt="...">
+  <p class="center">Humm!! Local Posts are empty... </p>
+</div>
+
 <div *ngFor="let article of blog.articles; let idx = index;" >
   <!-- <app-blog-item></app-blog-item> -->
   <div class="container">
@@ -21,7 +26,7 @@
               {{ article.description }}
             </p>
             <p class="published playfair_display"> By {{ article.source.name }} | <span class="playfair_display">{{ article.publishedAt }} </span></p>
-            <button  (click)="goDetail(idx)">
+            <button  class="btn btn-secondary margin_right_btn" (click)="goDetail(idx)">
               See More
             </button>
           </div>
