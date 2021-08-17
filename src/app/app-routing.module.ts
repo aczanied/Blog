@@ -7,13 +7,13 @@ import { MainComponent } from './pages/main/main.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'main',
+    path: '**',
+    redirectTo: '',
     pathMatch: 'full',
   },
   // Routes of Template
   {
-    path: 'main',
+    path: '',
     component: MainComponent,
   },
   {
@@ -24,6 +24,7 @@ const routes: Routes = [
     path: 'admin',
     loadChildren: () => import('./pages/admin/admin.module').then(m => m.AdminModule)
   },
+
 ];
 
 @NgModule({
