@@ -6,11 +6,7 @@ import { MainComponent } from './pages/main/main.component';
 
 
 const routes: Routes = [
-  {
-    path: '**',
-    redirectTo: '',
-    pathMatch: 'full',
-  },
+  { path: '**', component: MainComponent },
   // Routes of Template
   {
     path: '',
